@@ -18,17 +18,12 @@ public class Capicua {
         System.out.println("Introduce un número de 4 dígitos");
         num=sc.nextInt();
         int num1=num/1000;
-        int num2=num/100;
-        int num3=num/10;
-        int num4=num/1;
-        System.out.println(num1);
-        System.out.println(num2);
-        System.out.println(num3);
-        System.out.println(num4);
+        int num2=(num-(num1*1000))/100;
+        int num3=(num-(num1*1000+num2*100))/10;
+        int num4=num-(num1*1000+num2*100+num3*10);
         
         
-        
-        if(num<999&&num>10000){
+        if(num<999||num>10000){
             System.out.println("El número no tiene 4 dígitos, listillo");
         }else if(num1==num4&&num2==num3){
             System.out.println("El número es capicúa");
